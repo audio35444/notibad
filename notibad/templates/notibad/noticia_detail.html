@@ -8,6 +8,7 @@
             {{ noticia.create_date }}
         {% endif %}
         <a class="btn btn-default" href="{% url 'noticia_edit' pk=noticia.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'noticia_remove' pk=noticia.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         </div>
         <h1>{{ noticia.title }}</h1>
         <p>{{ noticia.text|linebreaksbr }}</p>

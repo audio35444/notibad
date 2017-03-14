@@ -35,4 +35,9 @@ def noticia_edit(request,pk):
 		form = NoticiaForm(instance=noticia)
 	return render(request,r'notibad\noticia_edit.html',{'form':form})
 
+def noticia_remove(request,pk):
+	noticia = get_object_or_404(Noticia,pk=pk)
+	noticia.delete()
+	return redirect('notibad.views.notibad_list')
+
 
