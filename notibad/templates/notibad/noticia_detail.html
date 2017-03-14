@@ -1,12 +1,14 @@
- {% extends 'notibad/base.html' %}
-{% block content %}
-  <div class="post">
-            {% if noticia.create_date %}
-                <div class="date">
-                    {{ noticia.create_date }}
-                </div>
-            {% endif %}
-            <h1><a href="{% url 'notibad.views.notibad_list' %}">{{ noticia.title }}</a></h1>
-            <p>{{ noticia.text|linebreaksbr }}</p>
+
+
+        {% extends 'notibad/base.html' %}
+
+    {% block content %}
+        <div class="date">
+        {% if noticia.create_date %}
+            {{ noticia.create_date }}
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'noticia_edit' pk=noticia.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         </div>
-{%endblock content%}
+        <h1>{{ noticia.title }}</h1>
+        <p>{{ noticia.text|linebreaksbr }}</p>
+    {% endblock %}
