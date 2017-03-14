@@ -1,0 +1,12 @@
+ {% extends 'notibad/base.html' %}
+{% block content %}
+  <div class="post">
+            {% if noticia.create_date %}
+                <div class="date">
+                    {{ noticia.create_date }}
+                </div>
+            {% endif %}
+            <h1><a href="{% url 'notibad.views.notibad_list' %}">{{ noticia.title }}</a></h1>
+            <p>{{ noticia.text|linebreaksbr }}</p>
+        </div>
+{%endblock content%}

@@ -1,0 +1,13 @@
+ {% extends 'notibad/base.html' %}
+{% block content %}
+               {% for noticia in qs_noticia %}
+        <div class="post">
+                        <div class="date">
+                            {{ noticia.create_date }}
+                        </div>
+                        <h1><a href="{% url 'notibad.views.noticia_detail' pk=noticia.pk %}">{{ noticia.title }}</a></h1>
+                        <p>{{ noticia.text|linebreaksbr }}</p>
+                    </div>
+    {% endfor %}
+    {%endblock content %}
+  
